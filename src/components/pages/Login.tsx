@@ -20,7 +20,13 @@ const Login: FC = memo(() => {
         <Divider my={4} />
         <Stack spacing={6} py={4} px={10}>
           <Input placeholder="ユーザーID" onChange={onChangeUserId} />
-          <PrimaryButton onClick={onClickLogin}>ログイン</PrimaryButton>
+          <PrimaryButton 
+            disabled={userId === ""} //userIdが空の時はdisabledがtrue
+            loading={loading} 
+            onClick={onClickLogin}
+          >
+            ログイン
+          </PrimaryButton>
         </Stack>
       </Box>
     </Flex>
